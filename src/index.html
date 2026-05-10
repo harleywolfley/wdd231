@@ -18,7 +18,7 @@
             <ul>
               <li class="overview">INFO</li>
               <li class="overview">ALERTS</li>
-              <li class="overview">MAPS</li>
+              <li class="overview" id="header-maps-link">MAPS</li>
               <li class="overview">EVENTS</li>
               <li class="overview">FEES</li>
             </ul>
@@ -55,7 +55,7 @@
                 </svg>
               </p>
             </li>
-            <li>
+            <li id="park-map-link">
               <p>MAPS</p>
               <p>
                 <svg>
@@ -81,7 +81,23 @@
             </li>
           </ul>
         </section>
+        <section id="promotions">
+          <h2>Park Promotions:</h2>
+          <p id="promotion-message"></p>
+        </section>
       </main>
+      <section id="map-modal" class="is-hidden">
+          <div id="map-modal-content">
+            <button id="map-modal-close">X</button>
+            <iframe
+      src="https://www.google.com/maps?q=Old+Faithful+Yellowstone+National+Park&output=embed"
+      width="100%"
+      height="420"
+      style="border: 0"
+      loading="lazy">
+            </iframe>
+          </div>
+        </section>
       <footer>
         <p>&copy; 2026 WDD 231 Project Site</p>
       </footer>
