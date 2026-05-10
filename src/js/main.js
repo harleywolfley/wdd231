@@ -8,7 +8,7 @@ function loadParkData() {
 function addEventListeners() {
     const menuTrigger = document.querySelector("#header-menu-trigger");
     const menuOptions = document.querySelector("#header-menu-options");
-    const overview = document.querySelectorAll(".overview");
+    const overview = document.querySelector(".overview");
 
     if (menuTrigger && menuOptions) {
         menuTrigger.addEventListener("click", () => {
