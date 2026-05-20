@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
-        keytest: resolve(__dirname, "src/key-text.html")
+        keytest: resolve(__dirname, "src/key-test.html")
       }
     }
   }
