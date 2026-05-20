@@ -1,3 +1,5 @@
+const apiKey = import.meta.env.VITE_NPS_API_KEY;
+
 const MENU_DATA_URL = "../public/data/menu.json";
 
 function buildHeaderMenuWithThen() {
