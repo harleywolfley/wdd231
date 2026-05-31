@@ -1,4 +1,3 @@
-const MENU_DATA_URL = "/data/menu.json";
 const NPS_PARK_URL = "https://developer.nps.gov/api/v1/parks";
 const NPS_API_KEY = import.meta.env.VITE_NPS_API_KEY;
 const DEFAULT_PARK_CODE = "yell";
@@ -439,3 +438,4 @@ init();
 // const message = isOpen ? "Park is open!" : "Park is closed.";
 // Printing the result held in the variable
 // console.log(message);
+
