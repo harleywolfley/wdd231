@@ -439,3 +439,4 @@ init();
 // const message = isOpen ? "Park is open!" : "Park is closed.";
 // Printing the result held in the variable
 // console.log(message);
+
