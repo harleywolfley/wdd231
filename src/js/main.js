@@ -4,7 +4,7 @@ const DEFAULT_PARK_CODE = "yell";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 const PARKS_DATA_URL = "/data/parks.json";
 const FAVORITES_KEY = "favorite-parks";
-const MENU_DATA_URL = "../public/data/menu.json";
+const MENU_DATA_URL = "/data/menu.json";
 
 function buildHeaderMenuWithThen() {
   // Find the header menu <ul>.
@@ -438,4 +438,3 @@ init();
 // const message = isOpen ? "Park is open!" : "Park is closed.";
 // Printing the result held in the variable
 // console.log(message);
-
