@@ -1,13 +1,14 @@
 // filepath: eslint.config.mjs
 import js from "@eslint/js";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import tseslint from "typescript-eslint"; // Comment this out
 import importPlugin from "eslint-plugin-import";
 import promisePlugin from "eslint-plugin-promise";
 import sonarjs from "eslint-plugin-sonarjs";
 
 export default [
   js.configs.recommended,
+  // delete line below
   ...tseslint.configs.recommendedTypeChecked,
 
   {
@@ -39,6 +40,8 @@ export default [
       "promise/catch-or-return": "warn",
       "promise/no-return-wrap": "warn",
 
+
+      //Comment these typescript out
       "@typescript-eslint/no-unnecessary-condition": "warn",
       "@typescript-eslint/strict-boolean-expressions": "warn",
       "@typescript-eslint/no-floating-promises": "warn",
