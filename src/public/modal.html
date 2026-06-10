@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 1rem;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#overlay.show{
+    display: flex;
+}
+
+#modal {
+    /* makes minimum 500px, but if screen is less than 500px, then it is 100% of the page. At least 500 px, then 100% makes it responsive under 500px.*/
+    width: min(500px, 100%);
+    background-color: white;
+    border-radius: 12px;
+}
+
+.hidden {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <h1>Simple Modal</h1>
+    <p>Do not click this button!! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores optio quae sit, eum eligendi esse architecto excepturi libero est ea minus quibusdam impedit similique? Assumenda voluptatibus necessitatibus quaerat impedit nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, magnam temporibus est voluptate nulla quidem? Nisi, temporibus? Accusamus, quia. Nam, maxime corporis at voluptates commodi eveniet molestiae similique nobis nisi? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae maiores explicabo temporibus! Quos corrupti, aperiam quae aspernatur, explicabo quas ratione ad dignissimos, alias laboriosam laborum! Commodi ratione temporibus iusto. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore deserunt dolores porro earum, illum recusandae quae tenetur fugit. Ducimus consequatur soluta animi doloremque natus iste? Voluptate eligendi molestias dolore aut?</p>
+    <button id="button">
+        <h3>The Button</h3>
+    </button>
+    <div id="overlay" class="">
+        <div id="modal" class="hidden">
+            <p>You clicked the button!</p>
+        </div>
+    </div>
+</body>
+<script>
+    let button = document.getElementById("button")
+    let overlay = document.getElementById("overlay")
+    let modal = document.getElementById("modal")
+    button.addEventListener("click", () => {
+        overlay.classList.toggle("show")
+        modal.classList.toggle("hidden")
+    })
+</script>
+</html>

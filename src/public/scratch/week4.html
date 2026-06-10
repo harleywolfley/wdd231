@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Week 4-1</h1>
+    <div id="student-data">
+        
+    </div>
+  </body>
+  <script>
+    // const student = student.json("./data/student.json")
+    // Fetch data
+    function getStudent(){
+        fetch("./data/student.json").then(getStudentData).then(displayStudentData)
+    }
+
+    // Response from fetch to get data
+    function getStudentData(response){
+        return response.json()
+    }
+
+    // Response from .json coming in
+    function displayStudentData(data){
+        console.log(data)
+    }
+
+    // Call Function
+    getStudent()
+
+    // Compact - Fetch, then get the response(is a function), then log the data (also function)
+    function getStudentCompact(){
+        fetch("./data/student.json")
+        .then(response => response.json())
+        .then(data => console.log(data))
+
+    }
+
+    // Call Function
+    getStudentCompact()
+
+    async function loadJSON() {
+        const response = await fetch("./data/student.json")
+        const data = await response.json()
+        console.log(data)
+    }
+
+    loadJSON()
+
+    const StudentData = document.getElementById("student-data")
+    function displayMoreStudentData(data){
+        const display = `<h1>Name: ${data.name}</h1>
+        <ul>
+            <li>Home Town: ${data.address.city}, ${data.address.state}</li>
+            <li>Skill: ${data.skills.join(", ")}</li>
+        </ul>`
+        StudentData.innerHTML = display 
+    }
+
+    // Waiting for data, removes then and longer functions
+    async function getStudentCompact2() {
+        const response = await fetch("./data/student.json")
+        const data = await response.json()
+        console.log(data)
+        //call display data in here, so data can exist
+        displayMoreStudentData(data)
+    }
+
+    getStudentCompact2()
+
+  </script>
+</html>

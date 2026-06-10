@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button {
+            font-size: 1.2rem;
+            padding: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>My fav tunes</h1>
+    <p>Store fav tunes here!</p>
+    <form>
+        <input name="tune">
+        <button type="submit">Add Tune</button>
+        <button type="button" id="reset">Reset</button>
+    </form>
+    <hr>
+    <ul id="fav-list"></ul>
+</body>
+<script>
+    const params = new URLSearchParams(window.location.search)
+    const tune = params.get("tune")
+    const listobj = document.getElementById("fav-list")
+    const favTunesString = localStorage.getItem("fav-tunes")
+    const favTunes = favTunesString ? JSON.parse(favTunesString) : []
+    if (tune){
+        favTunes.push(tune)
+        localStorage.setItem("fav-tunes", JSON.stringify(favTunes))
+    }
+
+    let listItems = favTunes.map (tune => `<li>${tune}</li>`).join("")
+    listobj.innerHTML = listItems
+
+    document.getElementById("reset").addEventListener("click", () => {
+        localStorage.removeItem("fav-tunes")
+        listobj.innerHTML = ""
+    })
+</script>
+</html>
