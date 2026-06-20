@@ -362,6 +362,10 @@ footer {
 
 #header-menu-trigger {
   transition: transform var(--motion-fast) var(--motion-ease), opacity var(--motion-fast) var(--motion-ease);
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  padding: .5rem;
 }
 
 #header-menu-trigger:hover,
@@ -429,10 +433,7 @@ footer {
   max-height: 1500px;
   opacity: 1;
   transform: translateY(0);
-  transition:
-    max-height var(--motion-medium) var(--motion-ease),
-    opacity var(--motion-medium) var(--motion-ease),
-    transform var(--motion-medium) var(--motion-ease);
+  transition: max-height var(--motion-medium) var(--motion-ease), opacity var(--motion-medium) var(--motion-ease), transform var(--motion-medium) var(--motion-ease);
 }
 
 #park-fees.is-hidden {
